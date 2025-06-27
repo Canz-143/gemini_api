@@ -13,7 +13,11 @@ def call_firecrawl_extractor(links):
     }
     payload = {
         "urls": limited_links,
-        "prompt": "Extract the price from the specified product page. Only get the main price; one price per URL. Include product name if available.",
+        "prompt": (
+            "Extract the price and product URL from the specified product page. "
+            "Only get the main price and the direct product page URL; one set per URL. "
+            "Include product name if available."
+        ),
         "schema": {
             "type": "object",
             "properties": {
@@ -23,9 +27,10 @@ def call_firecrawl_extractor(links):
                         "type": "object",
                         "properties": {
                             "product_name": {"type": "string"},
-                            "price": {"type": "string"}
+                            "price": {"type": "string"},
+                            "product_url": {"type": "string"}
                         },
-                        "required": ["product_name", "price"]
+                        "required": ["product_name", "price", "product_url"]
                     }
                 }
             },
