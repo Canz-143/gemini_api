@@ -21,20 +21,20 @@ def call_firecrawl_extractor(links):
         "schema": {
             "type": "object",
             "properties": {
-                "products": {
+                "ecommerce_links": {
                     "type": "array",
                     "items": {
                         "type": "object",
                         "properties": {
-                            "product_name": {"type": "string"},
+                            "website_name": {"type": "string"},
                             "price": {"type": "string"},
-                            "product_url": {"type": "string"}
+                            "website_url": {"type": "string"}
                         },
-                        "required": ["product_name", "price", "product_url"]
+                        "required": ["website_name", "price", "website_url"]
                     }
                 }
             },
-            "required": ["products"]
+            "required": ["ecommerce_links"]
         }
     }
     response = requests.post(url, headers=headers, json=payload)
