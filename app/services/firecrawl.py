@@ -4,8 +4,8 @@ from app.config import FIRECRAWL_API_KEY
 
 def call_firecrawl_extractor(links):
     # Only send the first 10 links
-    limited_links = links[:10]
-    print(f"[Firecrawl] Sending URLs (max 10): {limited_links}")  # Log the URLs being sent
+    limited_links = links[:5]
+    print(f"[Firecrawl] Sending URLs (max 5): {limited_links}")  # Log the URLs being sent
     url = "https://api.firecrawl.dev/v1/extract"
     headers = {
         "Content-Type": "application/json",
