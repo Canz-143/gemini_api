@@ -15,7 +15,7 @@ def call_firecrawl_extractor(links):
         "urls": limited_links,
         "prompt": (
             "Extract the price and product URL from the specified product page. "
-            "Only get the main price and the direct product page URL; one set per URL. "
+            "Only get the main price even if the product is out of stock, and the direct product page URL; one set per URL. "
             "Include website name."
         ),
         "schema": {
