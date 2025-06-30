@@ -14,12 +14,9 @@ def call_firecrawl_extractor(links):
     payload = {
         "urls": limited_links,
         "prompt": (
-            "You're extracting product data from a list of e-commerce product pages. For each URL, return a single object containing:\n"
-            "- the current listed price (not MSRP or discounts unless it's the only one shown),\n"
-            "- the canonical or direct product page URL,\n"
-            "- and the website name.\n\n"
-            "Only return data if all fields are clearly visible. Format the output strictly according to the provided schema under 'ecommerce_links'. "
-            "Do not include multiple prices or links per URL."
+            "Extract the price and product URL from the specified product page. "
+            "Only get the main price and the direct product page URL; one set per URL. "
+            "Include website name."
         ),
         "schema": {
             "type": "object",
