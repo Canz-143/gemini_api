@@ -4,9 +4,9 @@ import json
 from app.config import FIRECRAWL_API_KEY
 
 def call_firecrawl_extractor(links):
-    # Only send the first 5 links
+    # Only send the first 10 links
     limited_links = links[:5]
-    print(f"[Firecrawl] Sending URLs (max 10): {limited_links}")  # Log the URLs being sent
+    print(f"[Firecrawl] Sending URLs (max 5): {limited_links}")  # Log the URLs being sent
     url = "https://api.firecrawl.dev/v1/extract"
     headers = {
         "Content-Type": "application/json",
@@ -38,10 +38,10 @@ def call_firecrawl_extractor(links):
             "required": ["ecommerce_links"]
         }
     }
+
     response = requests.post(url, headers=headers, json=payload)
     firecrawl_result = response.json()
 
-    # If success and id present, poll until status is "completed"
     firecrawl_output = None
     if firecrawl_result.get("success") and firecrawl_result.get("id"):
         firecrawl_id = firecrawl_result["id"]
@@ -59,9 +59,9 @@ def call_firecrawl_extractor(links):
                 print("[Firecrawl] Still processing, waiting 5 seconds...")
                 time.sleep(5)
             else:
-                # Break on unexpected status to avoid infinite loop
                 break
-    return {
-        "firecrawl_result": firecrawl_result,
-        "firecrawl_output": firecrawl_output
-    }
+
+    # ✅ Only return the relevant clean portion
+    if firecrawl_output and firecrawl_output.get("success"):
+        return firecrawl_output
+    return None
