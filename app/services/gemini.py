@@ -99,7 +99,8 @@ Use Google Search to find direct product pages for this search term:
 - {term}
 
 ❌ Do NOT include:
-- Retailer homepages or category pages
+- Retailer homepages
+- Category pages
 - Search result pages
 - PDF files
 - Social media
