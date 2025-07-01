@@ -102,7 +102,6 @@ Use Google Search to find direct product pages for this search term:
 - Retailer homepages or category pages
 - Search result pages
 - PDF files, blogs, reviews, forums, or social media
-- Sites that doesnt have the product or a product.
 - Aggregator or comparison sites.
 
 ✅ Only provide direct product pages where the user can purchase the exact item.
