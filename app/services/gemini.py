@@ -101,7 +101,8 @@ Use Google Search to find direct product pages for this search term:
 ❌ Do NOT include:
 - Retailer homepages or category pages
 - Search result pages
-- PDF files, blogs, reviews, forums, or social media
+- PDF files
+- Social media
 - Aggregator or comparison sites.
 
 ✅ Only provide direct product pages where the user can purchase the exact item.
