@@ -104,7 +104,8 @@ Use Google Search to find direct product pages for this search term:
 - Search result pages
 - PDF files
 - Social media
-- Aggregator or comparison sites.
+- Aggregator or comparison sites
+- Non direct product pages.
 
 ✅ Only provide direct product pages where the user can purchase the exact item.
 
